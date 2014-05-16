@@ -2,15 +2,15 @@ rm(list=ls())
 fn <- "household_power_consumption.txt"
 if (!file.exists(fn)) {
   fileUrl1 <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
-  
+  fz <- "exdata-data-household_power_consumption.zip"
   if(Sys.info()["sysname"] == "Windows"){
-    download.file(fileUrl1, fn)
+    download.file(fileUrl1, fz)
   }
   else {
-    download.file(fileUrl1, fn, method="curl")  
+    download.file(fileUrl1, fz, method="curl")  
   }
-  fz <- "exdata-data-household_power_consumption.zip"
-  download.file(fileUrl1,fz)
+  
+  #download.file(fileUrl1,fz)
   #dateDownloaded <- date()
   print(dateDownloaded)
   unzip(fz,fn)
